@@ -7,20 +7,15 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
 **/node_modules
 dist
-**/dist
 dist-ssr
-**/dist-ssr
 *.local
 
 # Editor directories and files
 .vscode/*
-.vscode
 !.vscode/extensions.json
 .idea
-**/.vscode
 .DS_Store
 *.suo
 *.ntvs*
@@ -28,10 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 
-**/.env
-**/.env.*
-!**/.env.example
+.env
+.env.*
+!.env.example
+.idea
+.vscode
 yarn.lock
-**/yarn.lock
 package-lock.json
-**/package-lock.json
