@@ -3,7 +3,8 @@ name: Deploy Cloudflare Worker API
 on:
   push:
     branches:
-      - main # Sesuaikan dengan branch utama Anda (misal: master atau main)
+      - master
+      - dev/*
     paths:
       - 'api/**' # Hanya trigger action ini jika ada perubahan di dalam folder api/
 
