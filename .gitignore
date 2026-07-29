@@ -36,4 +36,4 @@ yarn.lock
 package-lock.json
 **/package-lock.json
 **/http-client.private.*
-**/wrangler.jsonc
+#**/wrangler.jsonc

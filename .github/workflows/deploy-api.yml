@@ -1,0 +1,33 @@
+name: Deploy Cloudflare Worker API
+
+on:
+  push:
+    branches:
+      - main # Sesuaikan dengan branch utama Anda (misal: master atau main)
+    paths:
+      - 'api/**' # Hanya trigger action ini jika ada perubahan di dalam folder api/
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'yarn'
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Deploy Cloudflare Worker
+        working-directory: api
+        run: npx wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # Jika API Anda membutuhkan env khusus saat deploy, masukkan di sini:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
