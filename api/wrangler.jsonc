@@ -3,5 +3,11 @@
   "name": "api",
   "main": "src/index.ts",
   "compatibility_flags": ["nodejs_compat"],
-  "compatibility_date": "2026-07-29"
+  "compatibility_date": "2026-07-29",
+  "routes": [
+    {
+      "pattern": "asaromi.biz.id/api*",
+      "zone_name": "asaromi.biz.id"
+    }
+  ]
 }
