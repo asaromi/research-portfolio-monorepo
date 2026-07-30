@@ -1,3 +1,5 @@
+import { Pagination } from '../common/type'
+
 export type ReviewDto = {
 	id: string;
 	full_name: string;
@@ -17,7 +19,7 @@ export class ReviewResponse {
 	private relation!: string
 	private review!: string
 
-	static from(review: ReviewDto) {
+	static from(review: ReviewDto): ReviewResponse {
 		const response = new ReviewResponse()
 		response.id = review.id
 		response.full_name = review.full_name
@@ -26,5 +28,12 @@ export class ReviewResponse {
 		response.relation = review.relation
 		response.review = review.review
 		return response
+	}
+
+	static paginate(pagination: Pagination<ReviewDto>): Pagination<ReviewResponse> {
+		return {
+			...pagination,
+			rows: pagination.rows.map(ReviewResponse.from)
+		}
 	}
 }
