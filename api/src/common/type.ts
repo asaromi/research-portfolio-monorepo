@@ -2,7 +2,7 @@ import { SupabaseClient } from '@supabase/supabase-js'
 
 export type Env = {
 	Bindings: {
-		SUPABASE_PUBLISHABLE_KEY: string;
+		SUPABASE_SECRET_KEY: string;
 		SUPABASE_URL: string;
 	},
 	Variables: {
@@ -11,7 +11,8 @@ export type Env = {
 }
 
 export type Pagination<T> = {
-	rows: T[];
+	count: number;
 	page: number;
 	perPage: number;
+	rows: T[];
 }

@@ -1,6 +1,6 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js'
 
-const SUPABASE_PUBLISHABLE_KEY = process.env.SUPABASE_PUBLISHABLE_KEY || ''
+const SUPABASE_SECRET_KEY = process.env.SUPABASE_SECRET_KEY || ''
 const SUPABASE_URL = process.env.SUPABASE_URL || ''
 
 export class SupabaseConnector {
@@ -9,7 +9,7 @@ export class SupabaseConnector {
 	constructor() {
 		this.supabase = createClient(
 			SUPABASE_URL,
-			SUPABASE_PUBLISHABLE_KEY,
+			SUPABASE_SECRET_KEY,
 			{ auth: { persistSession: false } },
 		)
 	}

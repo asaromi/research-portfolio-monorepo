@@ -13,7 +13,7 @@ export const getReviews = async (c: Context) => {
 		const { rows: reviews, ...pagination } = await reviewRepo.getReviews()
 		console.log({ supabase, reviews })
 
-		return { ...pagination, data: reviews.map(ReviewResponse.from) }
+		return { ...pagination, rows: reviews.map(ReviewResponse.from) }
 	} catch (error) {
 		console.error(error)
 	} finally {

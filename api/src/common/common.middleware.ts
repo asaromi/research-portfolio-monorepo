@@ -5,7 +5,7 @@ export const connectSupabase = async (c: Context, next: Next) => {
 	try {
 		const supabase = createClient(
 			c.env.SUPABASE_URL,
-			c.env.SUPABASE_PUBLISHABLE_KEY,
+			c.env.SUPABASE_SECRET_KEY,
 			{ auth: { persistSession: false} }
 		)
 
