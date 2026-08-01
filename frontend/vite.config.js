@@ -10,15 +10,7 @@ export default defineConfig({
     tailwindcss(),
     vue(),
     VueRouter({ 
-      routesFolder: [
-        {
-          src: 'src/pages/public',
-          path: '',
-        },
-        {
-          src: 'src/pages',
-        }
-      ]
+      routesFolder: 'src/pages'
     }),
     VitePWA({
       registerType: 'autoUpdate',
