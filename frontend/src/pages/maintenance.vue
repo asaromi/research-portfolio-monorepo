@@ -1,6 +1,3 @@
-<script setup>
-</script>
-
 <template>
   <div class="min-h-screen bg-base-200 flex items-center justify-center p-4">
     <div class="max-w-md w-full text-center space-y-8 bg-base-100 p-10 rounded-3xl shadow-md">
