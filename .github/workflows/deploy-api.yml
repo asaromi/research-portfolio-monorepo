@@ -14,7 +14,7 @@ on:
       - '.github/workflows/**'
 
 jobs:
-  pre-deploy:
+  test:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
@@ -29,10 +29,6 @@ jobs:
       - name: Install Dependencies
         run: yarn install
 
-  test:
-    needs: pre-deploy
-    runs-on: ubuntu-latest
-    steps:
       - name: Run API Tests
         run: yarn workspace api test
 
@@ -41,6 +37,18 @@ jobs:
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'yarn'
+
+      - name: Install Dependencies
+        run: yarn install
+
       - name: Deploy Cloudflare Worker
         working-directory: api
         run: npx wrangler deploy --var SUPABASE_URL:"${{ secrets.SUPABASE_URL }}" --var SUPABASE_SECRET_KEY:"${{ secrets.SUPABASE_SECRET_KEY }}"
