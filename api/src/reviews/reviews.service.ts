@@ -14,7 +14,7 @@ const reviewRepository = new ReviewsRepository()
 export const getReviews = async (c: Context): Promise<Pagination<ReviewResponse>> => {
 	console.group('getReviews')
 	try {
-		const { rows: reviews, ...pagination } = await reviewRepository.getReviews()
+		const { rows: reviews, ...pagination } = await reviewRepository.getReviews(c.req.query())
 		return ReviewResponse.paginate({ ...pagination, rows: reviews })
 	} catch (error) {
 		console.error(error)
