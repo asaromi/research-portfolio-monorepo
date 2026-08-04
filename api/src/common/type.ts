@@ -13,6 +13,6 @@ export type Env = {
 export type Pagination<T> = {
 	count: number;
 	page: number;
-	perPage: number;
+	per_page: number;
 	rows: T[];
 }
