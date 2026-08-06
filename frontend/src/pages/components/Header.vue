@@ -5,13 +5,13 @@ export default {
 </script>
 
 <template>
-  <header class="fixed top-0 flex justify-between items-center bg-base-bg-300 backdrop-blur-md w-screen overflow-hidden z-50 px-4">
-    <div class="drawer">
+  <header class="fixed top-0 flex justify-between items-center bg-base-bg-300 backdrop-blur-md w-screen z-50! px-4">
+    <div class="drawer z-50! overflow-hidden">
       <input id="my-drawer-1" type="checkbox" class="drawer-toggle"/>
 
       <div class="drawer-content flex flex-col">
         <!-- Navbar -->
-        <div class="navbar flex gap-4">
+        <div class="navbar flex gap-4 lg:px-2! px-0!">
           <div class="flex-none lg:hidden">
             <label for="my-drawer-1" aria-label="open sidebar" class="btn btn-square btn-ghost drawer-button">
               <svg
@@ -54,7 +54,7 @@ export default {
       <div class="drawer-side">
         <label for="my-drawer-1" aria-label="close sidebar" class="drawer-overlay"></label>
 
-        <nav>
+        <nav class="z-50!">
           <ul class="menu bg-base-200 min-h-screen w-80 p-4">
             <!-- Sidebar content here -->
             <li class="py-1 px-1.5 hover:border-b hover:cursor-pointer w-fit">Projects</li>

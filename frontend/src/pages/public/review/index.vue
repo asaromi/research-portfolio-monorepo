@@ -66,7 +66,7 @@ export default {
 <template>
   <app-header/>
 
-  <main class="main min-h-screen-minus-footer max-w-1440 mx-auto px-3 py-[64px] z-0 bg-base-bg">
+  <main class="main min-h-screen-minus-footer max-w-1440 mx-auto px-4! lg:px-0! py-[64px] z-0! bg-base-bg">
     <div class="hero min-h-48">
       <div class="hero-content text-center">
         <div>
@@ -78,11 +78,11 @@ export default {
       </div>
     </div>
 
-    <div class="flex justify-center">
+    <div class="flex justify-center z-0!">
       <div class="card lg:min-w-[480px] min-w-full mx-2 lg:mx-0 bg-base-100 shadow-xl">
 
         <!-- @submit.prevent sudah benar, akan mencegah reload halaman -->
-        <form @submit.prevent="() => console.log('Form submitted!')" class="card-body">
+        <form @submit.prevent="() => console.log('Form submitted!')" class="card-body px-2!">
           <div class="card-body text-center justify-center space-y-4! lg:px-8! px-4">
             <h2 class="text-lg font-semibold">Give me a Review</h2>
 
