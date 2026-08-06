@@ -1,7 +1,8 @@
 import { SupabaseClient } from '@supabase/supabase-js'
 import { ReviewDto } from './review.dto'
 import { Pagination } from '../common/type'
-import { SupabaseConnector } from '../common/supabase.connect'
+import { SupabaseConnector } from '../utils/util.supabase'
+import { Ulid } from '../utils/util.ulid'
 
 const supabaseClient = new SupabaseConnector()
 
@@ -13,19 +14,34 @@ export class ReviewsRepository {
 	}
 
 	async getReviews(params?: Record<string, unknown>): Promise<Pagination<ReviewDto>> {
-		const { page = 1, perPage = 10 } = (params || {}) as { page: number, perPage: number }
-		const offset = (page - 1) * perPage
+		const { page = 1, per_page = 10 } = (params || {}) as { page: number, per_page: number }
+		const offset = (page - 1) * per_page
 
 		const { data, error, count } = await this.supabase.from('reviews').select('*', { count: 'exact' })
 			.order('created_at', { ascending: false })
-			.range(offset, page * perPage - 1)
+			.range(offset, page * per_page - 1)
 
 		if (error) {
 			throw error
 		}
 
-		console.log({ data, count })
+		return { count, rows: (data || []) as ReviewDto[], page, per_page } as Pagination<ReviewDto>
+	}
 
-		return { count, rows: (data || []) as ReviewDto[], page, perPage } as Pagination<ReviewDto>
+	async createReview(payload: ReviewDto): Promise<{ id: string }> {
+		if (!payload.id) payload.id = Ulid.generate()
+
+		const { count, data, error } = await this.supabase.from('reviews')
+			.insert(
+				payload,
+				{ count: 'exact' }
+			)
+			.select('id').single()
+
+		if (error || !data?.id || !count) {
+			throw error ?? new Error('Something went wrong: insert review')
+		}
+
+		return data
 	}
 }
