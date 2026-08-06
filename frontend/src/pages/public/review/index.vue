@@ -82,8 +82,8 @@ export default {
       <div class="card lg:min-w-[480px] min-w-full mx-2 lg:mx-0 bg-base-100 shadow-xl">
 
         <!-- @submit.prevent sudah benar, akan mencegah reload halaman -->
-        <form @submit.prevent="() => console.log('Form submitted!')" class="card-body px-2!">
-          <div class="card-body text-center justify-center space-y-4! lg:px-8! px-4">
+        <form @submit.prevent="() => console.log('Form submitted!')" class="card-body p-2!">
+          <div class="card-body text-center justify-center space-y-4! lg:px-8! p-4!">
             <h2 class="text-lg font-semibold">Give me a Review</h2>
 
             <div class="grid lg:grid-cols-2 grid-cols-1 gap-4">
