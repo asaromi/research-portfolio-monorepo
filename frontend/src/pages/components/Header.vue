@@ -30,14 +30,14 @@ export default {
             </label>
           </div>
 
-          <h2 class="flex-1 px-2 font-semibold">DevPortfolio</h2>
+          <h2 class="flex-1 px-2 font-bold">DevPortfolio</h2>
 
           <nav class="gap-5 hidden flex-none lg:flex">
             <ul class="h-full flex justify-items-center text-center">
-              <li class="py-1 w-[72px] hover:border-b hover:cursor-pointer hover:font-semibold">Projects</li>
-              <li class="py-1 w-[80px] hover:border-b hover:cursor-pointer hover:font-semibold">Stack</li>
-              <li class="py-1 w-[96px] hover:border-b hover:cursor-pointer hover:font-semibold">Experience</li>
-              <li class="py-1 w-[80px] hover:border-b hover:cursor-pointer hover:font-semibold">Contact</li>
+              <li class="py-1 w-[72px] not-active:font-semibold active:border-b active:cursor-pointer active:font-bold">Projects</li>
+              <li class="py-1 w-[80px] not-active:font-semibold active:border-b active:cursor-pointer active:font-bold">Stack</li>
+              <li class="py-1 w-[96px] not-active:font-semibold active:border-b active:cursor-pointer active:font-bold">Experience</li>
+              <li class="py-1 w-[80px] not-active:font-semibold active:border-b active:cursor-pointer active:font-bold">Contact</li>
             </ul>
           </nav>
 
@@ -56,11 +56,11 @@ export default {
 
         <nav class="z-50!">
           <ul class="menu bg-base-200 min-h-screen w-80 p-4">
-            <!-- Sidebar content here -->
-            <li class="py-1 px-1.5 hover:border-b hover:cursor-pointer w-fit">Projects</li>
-            <li class="py-1 px-1.5 hover:border-b hover:cursor-pointer w-fit">Stack</li>
-            <li class="py-1 px-1.5 hover:border-b hover:cursor-pointer w-fit">Experience</li>
-            <li class="py-1 px-1.5 hover:border-b hover:cursor-pointer w-fit">Contact</li>
+            <!-- Sidebar content here --> 
+            <li class="py-1 px-1.5 not-active:font-semibold active:border-b active:cursor-pointer active:font-bold w-fit">Projects</li>
+            <li class="py-1 px-1.5 not-active:font-semibold active:border-b active:cursor-pointer active:font-bold w-fit">Stack</li>
+            <li class="py-1 px-1.5 not-active:font-semibold active:border-b active:cursor-pointer active:font-bold w-fit">Experience</li>
+            <li class="py-1 px-1.5 not-active:font-semibold active:border-b active:cursor-pointer active:font-bold w-fit">Contact</li>
           </ul>
         </nav>
       </div>

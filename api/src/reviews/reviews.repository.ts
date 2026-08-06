@@ -1,16 +1,14 @@
 import { SupabaseClient } from '@supabase/supabase-js'
 import { ReviewDto } from './review.dto'
 import { Pagination } from '../common/type'
-import { SupabaseConnector } from '../utils/util.supabase'
+import { initSupabase } from '../utils/util.supabase'
 import { Ulid } from '../utils/util.ulid'
-
-const supabaseClient = new SupabaseConnector()
 
 export class ReviewsRepository {
 	private supabase: SupabaseClient
 
-	constructor() {
-		this.supabase = supabaseClient.getSupabase()
+	constructor(supabaseClient?: SupabaseClient, ) {
+		this.supabase = supabaseClient instanceof SupabaseClient ? supabaseClient : initSupabase().getSupabase()
 	}
 
 	async getReviews(params?: Record<string, unknown>): Promise<Pagination<ReviewDto>> {
@@ -33,10 +31,10 @@ export class ReviewsRepository {
 
 		const { count, data, error } = await this.supabase.from('reviews')
 			.insert(
-				payload,
-				{ count: 'exact' }
+				payload, { count: 'exact' }
 			)
-			.select('id').single()
+			.select('id')
+			.single()
 
 		if (error || !data?.id || !count) {
 			throw error ?? new Error('Something went wrong: insert review')
