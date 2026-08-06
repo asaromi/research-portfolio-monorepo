@@ -9,5 +9,5 @@ export class ReviewsValidation {
 		review: z.string().max(4000).nonempty(),
 		relation: z.enum(['colleague', 'manager', 'direct', 'mentor']).optional().nullable(),
 		position: z.string().optional().nullable(),
-	})
+	}).strict()
 }

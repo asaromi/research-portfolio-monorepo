@@ -4,9 +4,6 @@ import { ReviewResponse } from './review.dto'
 import { Env, Pagination } from '../common/type'
 import { Ulid } from '../utils/util.ulid'
 import { UtilValidation } from '../utils/util.validation'
-import { SupabaseClient } from '@supabase/supabase-js'
-
-const validation = new UtilValidation()
 
 export const getReviews = async (c: Context<Env>): Promise<Pagination<ReviewResponse>> => {
 	const supabase = c.var.supabase

@@ -21,6 +21,7 @@ export const onErrorRequest = (err: Error | ErrorObject, c: Context) => {
 	const { type, code } = err as ErrorObject
 	const { cause } = err as Error
 
+	console.error(err)
 	return c.json(
 		ApiResponse.error(
 			type || 'INTERNAL_SERVER_ERROR',

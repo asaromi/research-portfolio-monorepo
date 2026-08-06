@@ -14,7 +14,7 @@ export default {
     const formData = reactive({
       full_name: '',
       company: '',
-      role: '',
+      position: '',
       relation: '',
       review: '',
     })
@@ -33,7 +33,7 @@ export default {
         Object.assign(formData, {
           full_name: '',
           company: '',
-          role: '',
+          position: '',
           relation: '',
           review: '',
         })
@@ -118,7 +118,7 @@ export default {
               <label class="fieldset text-start">
                 <span class="text-base-typo text-sm font-medium">Role / Position</span>
                 <input
-                    v-model="formData.role"
+                    v-model="formData.position"
                     type="text"
                     placeholder="Role Name"
                     class="input w-full input-md rounded-md border border-base-input! focus:outline-offset-0!"

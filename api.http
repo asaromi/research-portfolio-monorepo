@@ -6,7 +6,9 @@ POST {{host}}/reviews
 Content-Type: application/json
 
 {
-  "full_name": "Jane Controller 2",
-  "company": "Acme",
-  "review": "Great Work"
+  "full_name": "aaa",
+  "company": "aaa",
+  "role": "aaa",
+  "relation": "direct",
+  "review": "aaa"
 }
