@@ -12,6 +12,7 @@ on:
     paths:
       - 'api/**'
       - '.github/workflows/**'
+  workflow_dispatch:
 
 jobs:
   test:
