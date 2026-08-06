@@ -30,7 +30,7 @@ export default {
             </label>
           </div>
 
-          <h2 class="flex-1 px-2">DevPortfolio</h2>
+          <h2 class="flex-1 px-2 font-semibold">DevPortfolio</h2>
 
           <nav class="gap-5 hidden flex-none lg:flex">
             <ul class="h-full flex justify-items-center text-center">
