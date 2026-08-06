@@ -135,7 +135,7 @@ export default {
                   <option value="" disabled>Select an option</option>
                   <option value="direct">Direct Client</option>
                   <option value="colleague">Team Colleague</option>
-                  <option value="supervisor">Manager / Supervisor</option>
+                  <option value="manager">Manager / Supervisor</option>
                   <option value="mentor">Mentor / Advisor</option>
                 </select>
               </label>
