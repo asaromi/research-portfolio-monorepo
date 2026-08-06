@@ -6,11 +6,35 @@ on:
       - master
       - dev/*
     paths:
-      - 'api/**' # Hanya trigger action ini jika ada perubahan di dalam folder api/
-      - '.github/workflows/deploy-api.yml'
+      - 'api/**'
+      - '.github/workflows/**'
+  pull_request:
+    paths:
+      - 'api/**'
+      - '.github/workflows/**'
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'yarn'
+
+      - name: Install Dependencies
+        run: yarn install
+
+      - name: Run API Tests
+        run: yarn workspace api test
+
   deploy:
+    needs: test
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code

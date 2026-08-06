@@ -9,7 +9,18 @@ export default defineConfig({
   plugins: [
     tailwindcss(),
     vue(),
-    VueRouter({ routesFolder: "src/pages" }),
+    VueRouter({ 
+      routesFolder: [
+        {
+          src: 'src/pages/public',
+          path: '',
+        },
+        {
+          src: 'src/pages',
+        }
+      ],
+      exclude: ['src/pages/components/**']
+    }),
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
@@ -62,4 +73,15 @@ export default defineConfig({
       }
     }),
   ],
+  
+  server: {
+    // make alias for api_server
+    proxy: {
+      '/api': {
+        target: 'https://api.asaromi.workers.dev',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '/api')
+      }
+    },
+  }
 });

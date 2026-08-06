@@ -1,0 +1,14 @@
+### GET - List of Reviews
+GET {{host}}/reviews
+
+### POST - Create a Review
+POST {{host}}/reviews
+Content-Type: application/json
+
+{
+  "full_name": "ADAM GP",
+  "position": "Fullstack Dev",
+  "relation": "",
+  "company": "Company",
+  "review": "This product exceeded my expectations. The quality is top-notch and the customer service was excellent."
+}

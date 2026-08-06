@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
-import routers from './configs/routers'
+import router from './configs/routers'
 
 // Mengimpor script pendaftaran PWA otomatis
 import { registerSW } from 'virtual:pwa-register'
@@ -17,5 +17,5 @@ const updateSW = registerSW({
 })
 
 createApp(App)
-  .use(routers)
+  .use(router)
   .mount('#app')
