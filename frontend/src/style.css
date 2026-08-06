@@ -2,6 +2,10 @@
 @config "../tailwind.config.js";
 
 @layer base {
+    html, body {
+        font-family: "Manrope", sans-serif;
+    }
+
     :root, [data-theme="azure"] {
         --color-primary: #0A2540;
         --color-primary-content: #ffffff;
@@ -21,12 +25,11 @@
         --color-error: #ba1a1a;
         --color-error-content: #ffffff;
 
-        /* PERBAIKAN: Gunakan --rounded alih-alih --radius */
         --rounded-box: 16rem; /* 16px (bisa juga ditulis 1rem jika Tailwind mendeteksi rem) */
         --rounded-btn: 8px;
         --rounded-badge: 4px;
         --radius-selector: 2rem;
-        --radius-field: 1rem;
+        --radius-field: 4px;
         --radius-box: 0.5rem;
     }
 }

@@ -8,7 +8,7 @@ Content-Type: application/json
 {
   "full_name": "ADAM GP",
   "position": "Fullstack Dev",
-  "relation": "colleague",
+  "relation": "",
   "company": "Company",
   "review": "This product exceeded my expectations. The quality is top-notch and the customer service was excellent."
 }

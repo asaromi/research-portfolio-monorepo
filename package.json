@@ -1,8 +1,10 @@
 {
   "name": "monorepo-research-vite-clouldflare",
   "private": true,
-  "workspaces": [
-    "frontend",
-    "api"
-  ]
+  "workspaces": ["frontend", "api"],
+  "scripts": {
+    "dev:frontend": "yarn workspace frontend dev --port=3000",
+    "dev:api": "yarn workspace api dev",
+    "dev": "yarn dev:frontend & yarn dev:api"
+  }
 }

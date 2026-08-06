@@ -18,7 +18,8 @@ export default defineConfig({
         {
           src: 'src/pages',
         }
-      ]
+      ],
+      exclude: ['src/pages/components/**']
     }),
     VitePWA({
       registerType: 'autoUpdate',
@@ -79,7 +80,7 @@ export default defineConfig({
       '/api': {
         target: 'https://api.asaromi.workers.dev',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, '')
+        rewrite: (path) => path.replace(/^\/api/, '/api')
       }
     },
   }
