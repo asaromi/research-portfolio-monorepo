@@ -3,7 +3,6 @@ import { createClient, SupabaseClient } from '@supabase/supabase-js'
 const SUPABASE_SECRET_KEY = process.env.SUPABASE_SECRET_KEY || ''
 const SUPABASE_URL = process.env.SUPABASE_URL || ''
 
-
 export const initSupabase = (schema: string = 'public') => new SupabaseConnector(schema as 'public')
 
 export class SupabaseConnector {
@@ -24,3 +23,5 @@ export class SupabaseConnector {
 		return this.supabase
 	}
 }
+
+export default SupabaseClient

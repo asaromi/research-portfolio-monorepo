@@ -1,13 +1,13 @@
 import { SupabaseClient } from '@supabase/supabase-js'
 import { ReviewDto } from './review.dto'
 import { Pagination } from '../common/type'
-import { initSupabase } from '../utils/util.supabase'
-import { Ulid } from '../utils/util.ulid'
+import { initSupabase } from '../common/libs'
+import { Ulid } from '../common/utils/util.ulid'
 
 export class ReviewsRepository {
 	private supabase: SupabaseClient
 
-	constructor(supabaseClient?: SupabaseClient, ) {
+	constructor(supabaseClient?: SupabaseClient) {
 		this.supabase = supabaseClient instanceof SupabaseClient ? supabaseClient : initSupabase().getSupabase()
 	}
 

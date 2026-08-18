@@ -1,6 +1,6 @@
+import { createClient } from '@supabase/supabase-js'
 import { afterAll, describe, expect, it } from 'vitest'
 import reviewRouter from '../../src/reviews/reviews.controller'
-import { createClient } from '@supabase/supabase-js'
 
 const supabase = createClient(
 	process.env.SUPABASE_URL || '',
@@ -11,6 +11,7 @@ const supabase = createClient(
 const env = {
 	SUPABASE_URL: process.env.SUPABASE_URL || '',
 	SUPABASE_SECRET_KEY: process.env.SUPABASE_SECRET_KEY || '',
+	SUPABASE_SCHEMA: 'testing',
 }
 
 describe('reviews.controller', () => {

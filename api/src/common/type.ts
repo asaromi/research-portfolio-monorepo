@@ -1,13 +1,16 @@
 import { SupabaseClient } from '@supabase/supabase-js'
 import { ContentfulStatusCode } from 'hono/utils/http-status'
+import { Firestore } from '@firebase/firestore/lite'
 
 export type Env = {
 	Bindings: {
 		SUPABASE_SECRET_KEY: string;
 		SUPABASE_URL: string;
+		SUPABASE_SCHEMA: 'testing' | 'public';
 	},
 	Variables: {
 		supabase: SupabaseClient;
+		firestore: Firestore;
 	},
 }
 

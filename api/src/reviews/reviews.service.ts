@@ -2,8 +2,8 @@ import { Context } from 'hono'
 import { ReviewsRepository } from './reviews.repository'
 import { ReviewResponse } from './review.dto'
 import { Env, Pagination } from '../common/type'
-import { Ulid } from '../utils/util.ulid'
-import { UtilValidation } from '../utils/util.validation'
+import { Ulid } from '../common/utils/util.ulid'
+import { UtilValidation } from '../common/utils/util.validation'
 
 export const getReviews = async (c: Context<Env>): Promise<Pagination<ReviewResponse>> => {
 	const supabase = c.var.supabase

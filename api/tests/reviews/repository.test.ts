@@ -1,6 +1,6 @@
+import { createClient } from '@supabase/supabase-js'
 import { describe, it, expect, afterAll } from 'vitest'
 import { ReviewsRepository } from '../../src/reviews/reviews.repository'
-import { createClient } from '@supabase/supabase-js'
 
 const supabase = createClient(
 	process.env.SUPABASE_URL || '',

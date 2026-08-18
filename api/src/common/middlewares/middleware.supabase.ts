@@ -1,18 +1,18 @@
 import { zValidator } from '@hono/zod-validator'
-import { createClient } from '@supabase/supabase-js'
 import { Context, Next } from 'hono'
-import { ZodError, ZodType } from 'zod'
-import { ApiResponse } from './common.dto'
-import { Env, ErrorObject } from './type'
-import { UtilValidation } from '../utils/util.validation'
 import { ContentfulStatusCode } from 'hono/utils/http-status'
-import { initSupabase, SupabaseConnector } from '../utils/util.supabase'
 import { createMiddleware } from 'hono/factory'
+import { ZodError, ZodType } from 'zod'
+import { ApiResponse } from '../dtos/common.dto'
+import { initSupabase } from '../libs'
+import { UtilValidation } from '../utils/util.validation'
+import { Env, ErrorObject } from '../type'
 
 const validation = new UtilValidation()
 
 export const onConnectSupabase = createMiddleware<Env>(async (c: Context<Env>, next: Next) => {
-	c.set('supabase', initSupabase('public').getSupabase())
+	const SUPABASE_SCHEMA = c.env.SUPABASE_SCHEMA
+	c.set('supabase', initSupabase(SUPABASE_SCHEMA).getSupabase())
 
 	await next()
 })

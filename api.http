@@ -12,3 +12,37 @@ Content-Type: application/json
   "relation": "direct",
   "review": "aaa"
 }
+
+### Get Orders - Amazone Beta
+GET {{host}}/orders/v1/ZGOY9Ncj0Aa6uejDCu2lCW77drD3
+Content-Type: application/json
+
+### Checkout Order - Amazon Beta
+POST {{host}}/orders/v1/ZGOY9Ncj0Aa6uejDCu2lCW77drD3/checkout
+Content-Type: application/json
+
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "rating": 1,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+      "hasPrime": true
+    },
+    {
+      "id": 1,
+      "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+      "price": 109.95,
+      "rating": 1,
+      "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+      "category": "men's clothing",
+      "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+      "hasPrime": true
+    }
+  ],
+  "email": "asami.mayuri1@gmail.com"
+}
