@@ -57,8 +57,8 @@ export default {
           !!this.formData.company.trim() &&
           !!this.formData.review.trim()
       )
-    }
-  }
+    },
+  },
 }
 
 </script>
@@ -178,15 +178,20 @@ export default {
   </main>
 
   <div class="modal" id="confirm_modal" popover>
-    <div class="modal-box space-y-4" >
+    <div class="modal-box space-y-4">
       <h3 class="font-bold text-lg">Preview your testimonial</h3>
       <p class="py-2">
         Your review will be displayed on my portfolio website. Please review the details carefully before submitting.
       </p>
 
       <div class="flex justify-center">
-      <review-card :company="formData.company" :review="formData.review" :full-name="formData.full_name"
-                   :role="formData.role" :relation="formData.relation"/>
+        <review-card
+            :company="formData.company"
+            :review="formData.review"
+            :full-name="formData.full_name"
+            :role="formData.position"
+            :relation="formData.relation"
+        />
       </div>
 
       <div class="modal-action">

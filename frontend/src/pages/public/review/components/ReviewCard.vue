@@ -18,11 +18,11 @@ export default {
       </svg>
 
       <p>"{{ review }}"</p>
-      <p>
+      <p class="text-sm mt-4">
         <span class="font-semibold">{{ fullName }}</span>
         <br/>
         <span v-if="role" class="text-base-typo font-semibold"> {{ role }}</span>
-        <span v-if="company" class="text-base-typo font-semibold"> at {{ company }}</span>
+        <span v-if="company" class="text-base-typo font-semibold"> @ {{ company }}</span>
       </p>
     </div>
   </div>
